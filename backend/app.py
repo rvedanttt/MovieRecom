@@ -8,6 +8,10 @@ import os
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend
 
+@app.route('/')
+def home():
+    return jsonify({"message": "API is running"})
+
 # Load model
 recommender = MovieRecommender()
 recommender.load_data()
