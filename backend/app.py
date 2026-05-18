@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 import pickle
 import numpy as np
-from model import MovieRecommender
+from backend.model import MovieRecommender
 import os
 
 app = Flask(__name__)
