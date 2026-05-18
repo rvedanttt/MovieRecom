@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 import pickle
 import numpy as np
@@ -9,8 +9,8 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend
 
 @app.route('/')
-def home():
-    return jsonify({"message": "API is running"})
+def home_page():
+    return render_template("index.html")
 
 # Load model
 recommender = MovieRecommender()
